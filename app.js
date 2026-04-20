@@ -108,6 +108,10 @@ function updateChart(releaseTotals, options = {}) {
         y: {
           beginAtZero: true,
           title: { display: true, text: 'Number of Downloads' },
+          ticks: {
+            stepSize: 1,
+            precision: 0,
+          },
         },
       },
     },
