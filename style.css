@@ -1,0 +1,172 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #eef2f7;
+  color: #1f2937;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.panel {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.hero p {
+  margin: 12px auto 0;
+  max-width: 650px;
+  color: #475569;
+}
+
+.search-panel,
+.chart-header,
+.table-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-panel {
+  margin-bottom: 24px;
+}
+
+.search-panel label {
+  font-weight: 600;
+}
+
+#repo-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  color: #111827;
+}
+
+.hint {
+  width: 100%;
+  margin: 0;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+button {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, background-color 0.16s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button.primary {
+  background: #2563eb;
+  color: #fff;
+}
+
+button.success {
+  background: #16a34a;
+  color: #fff;
+}
+
+button.secondary {
+  background: #64748b;
+  color: #fff;
+}
+
+.chart-panel,
+.table-panel {
+  margin-bottom: 30px;
+}
+
+.chart-card,
+.table-scroll {
+  margin-top: 16px;
+  padding: 20px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+#downloads-chart {
+  width: 100%;
+  min-height: 320px;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #475569;
+}
+
+tbody tr:hover {
+  background: #f8fafc;
+}
+
+.status {
+  margin-top: 16px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: #f8fafc;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+}
+
+@media (max-width: 640px) {
+  .panel {
+    padding: 24px 16px 32px;
+  }
+
+  button,
+  #repo-input {
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: 12px 10px;
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Release Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="panel">
+      <header class="hero">
+        <h1>GitHub Release Tracker</h1>
+        <p>Enter a GitHub repository and see release asset downloads.</p>
+      </header>
+
+      <section class="search-panel">
+        <label for="repo-input">Repository or username</label>
+        <input id="repo-input" type="text" placeholder="owner/repo or username" value="halebop17/hyper-nudge" />
+        <button id="track-button" class="primary">Track Releases</button>
+        <p class="hint">Enter <code>owner/repo</code> for a single repository, or a GitHub username/org to summarize downloads across all repos.</p>
+      </section>
+
+      <section class="chart-panel">
+        <div class="chart-header">
+          <h2>Asset Downloads for Latest Releases</h2>
+          <button id="toggle-legend">Toggle Legend</button>
+        </div>
+        <div class="chart-card">
+          <canvas id="downloads-chart" aria-label="Asset downloads per release" role="img"></canvas>
+        </div>
+      </section>
+
+      <section class="table-panel">
+        <div class="table-header">
+          <h2>Release Data</h2>
+          <button id="export-button" class="success">Export to CSV</button>
+        </div>
+        <div class="table-scroll">
+          <table id="release-table">
+            <thead>
+              <tr>
+                <th>Repo</th>
+                <th>Release Date</th>
+                <th>Tag</th>
+                <th>Name</th>
+                <th>Asset</th>
+                <th>Downloads</th>
+                <th>Total Downloads</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <div id="status" class="status"></div>
+    </main>
+  </body>
+</html>
