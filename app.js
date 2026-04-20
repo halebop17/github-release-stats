@@ -85,6 +85,7 @@ function updateChart(releaseTotals, options = {}) {
     ],
   };
 
+  const maxValue = Math.max(...values, 0);
   const config = {
     type: 'bar',
     data,
@@ -106,11 +107,13 @@ function updateChart(releaseTotals, options = {}) {
           title: { display: true, text: options.xAxisLabel || 'Release Tags' },
         },
         y: {
-          beginAtZero: true,
+          min: 0,
+          max: Math.max(Math.ceil(maxValue), 1),
           title: { display: true, text: 'Number of Downloads' },
           ticks: {
             stepSize: 1,
             precision: 0,
+            callback: (value) => Number(value).toFixed(0),
           },
         },
       },
