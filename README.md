@@ -1,6 +1,6 @@
 # GitHub Release Tracker
 
-A simple static app that fetches GitHub release data and displays download counts for release assets.
+A simple static app that fetches GitHub release data and displays download counts for release assets. It allows not only to get stats for one repo but you can also enter your username and get a list of all your releases across all repos.
 
 ## How to use
 
